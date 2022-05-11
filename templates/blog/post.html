@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ post['title'] }}</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body style="margin:0">
+    <nav>
+        <div class="banner"> 
+          <a href={{url_for('home')}}>HOME</a>
+          <a href={{url_for('articles')}}>RECIPES</a>
+        </div>
+      </nav>
+
+
+
+
+      
+{% block content %}
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <span class="date_heure">{{ post['created'] }}</span>
+    <p>{{ post['content'] }}</p>
+{% endblock %}  
+</body>
+</html>

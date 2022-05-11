@@ -17,3 +17,5 @@ COPY . /app
 ENTRYPOINT [ "python" ]
 
 CMD ["view.py" ]
+
+EXPOSE 5000

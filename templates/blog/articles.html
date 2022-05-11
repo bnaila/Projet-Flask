@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recettes</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body style="margin: 0">
+  <nav>
+    <div class="banner"> 
+      <a href={{url_for('home')}}>HOME</a>
+      <a href={{url_for('articles')}}>RECIPES</a>
+    </div>
+  </nav>
+  
+<div class="header">
+    <h1>Cooking with Chahrazed</h1>
+</div>
+
+
+<div  style="display: flex">
+{% block content %}
+  {% for post in posts %}
+    <div style="position: relative; text-align: center; " >
+      <!-- {{post['linkimg']}} -->
+      <img src="https://askcodez.com/images2/15545336650268.png" style="padding:20px;"> 
+      <div style="position: absolute;  top: 50%;  left: 50%; transform: translate(-50%, -50%);" >
+        <a class="posts_link"  href="{{post['id']}}">{{ post['title'] }}</a>
+      </div>
+    </div> 
+  {% endfor %}
+{% endblock %}
+</div>
+
+
+  <footer>
+    <p>&copy; 2022, by Chahrazed AMAR, Naila BOUTERFA</p>
+    <div class="social-media">
+      <p><i class="fab fa-facebook"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+      <p><i class="fab fa-instagram"></i></p>
+    </div>
+  </footer>
+
+</body>
+</html>

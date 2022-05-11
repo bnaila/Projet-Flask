@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+
+
 body{
   margin: 10px 80px;
   font-family: 'Noto Sans JP', sans-serif;
@@ -10,6 +12,7 @@ nav {
   flex-wrap:wrap;
   justify-content:space-between;
 }
+
 nav h1{
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -64,24 +67,4 @@ footer .social-media{
 footer .social-media p{
   font-size: 18px;
   margin-right: 20px;
-}
-
-@media screen and (max-width: 640px){
-  body{
-    margin: 10px 20px;
-  }
-  nav .onglets{
-    margin-top: -10px;
-  }
-  .articles .article .left img{
-    height: 100%;
-    width:100%;
-  }
-  .articles .article .right{
-    margin: 0px;
-    max-width: 100%;
-  }
-  footer .social-media{
-    margin-top: -20px;
-  }
 }
