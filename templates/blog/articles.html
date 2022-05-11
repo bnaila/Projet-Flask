@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Recettes</title>
   <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 
 <body style="margin: 0">
@@ -15,17 +16,17 @@
     </div>
   </nav>
   
-<div class="header">
-    <h1>Cooking with Chahrazed</h1>
-</div>
+  <div class="header">
+      <h1>Cooking with Chahrazed</h1>
+  </div>
 
 
-<div  style="display: flex">
+<div  style="display: flex;   align-items: center; justify-content: center;">
 {% block content %}
   {% for post in posts %}
     <div style="position: relative; text-align: center; " >
       <!-- {{post['linkimg']}} -->
-      <img src="https://askcodez.com/images2/15545336650268.png" style="padding:20px;"> 
+      <img src="static\Baghrir.jpg" style="padding:20px; width: 300px;"> 
       <div style="position: absolute;  top: 50%;  left: 50%; transform: translate(-50%, -50%);" >
         <a class="posts_link"  href="{{post['id']}}">{{ post['title'] }}</a>
       </div>

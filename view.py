@@ -1,9 +1,9 @@
 import sqlite3
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
 import os
 
-from flask_admin import Admin
+#from flask_admin import Admin
 
 
 
@@ -25,8 +25,9 @@ def get_post(post_id):
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your secret key'
 
-admin = Admin(app)
+#admin = Admin(app)
 
 
 @app.route('/')
@@ -47,6 +48,25 @@ def post(post_id):
     return render_template('blog/post.html', post=post)
 
 
+
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        # ingredients = request.form['ingredients']
+        content = request.form['content']
+
+        if not title:
+            flash('Title is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO posts (title,  content) VALUES (?, ?)',
+                         (title,  content))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('index'))
+
+    return render_template('create.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
