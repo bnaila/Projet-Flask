@@ -53,15 +53,16 @@ def post(post_id):
 def create():
     if request.method == 'POST':
         title = request.form['title']
-        # ingredients = request.form['ingredients']
+        ingredients = request.form['ingredients']
         content = request.form['content']
+        linkimg = request.form['linkimg']
 
         if not title:
             flash('Title is required!')
         else:
             conn = get_db_connection()
-            conn.execute('INSERT INTO posts (title,  content) VALUES (?, ?)',
-                         (title,  content))
+            conn.execute('INSERT INTO posts (title, ingredients, content, linkimg) VALUES (?, ?,?,?)',
+                         (title, ingredients, content, linkimg))
             conn.commit()
             conn.close()
             return redirect(url_for('index'))

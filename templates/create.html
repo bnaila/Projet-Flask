@@ -15,21 +15,26 @@
 
     <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" name="title"
-               placeholder="Post title" class="form-control"
+        <input type="text" name="title"  placeholder="Post title" class="form-control"
                value="{{ request.form['title'] }}"></input>
     </div>
 
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label for="ingredients">Ingredients</label>
-        <textarea name="ingredients" placeholder="Post content"
-                  class="form-control">{{ request.form['content'] }}</textarea>
-    </div> -->
+        <textarea name="ingredients" placeholder="Post ingredients"
+         class="form-control">{{ request.form['ingredients'] }}</textarea>
+    </div>
 
     <div class="form-group">
         <label for="content">Content</label>
         <textarea name="content" placeholder="Post content"
                   class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="linkimg">Link img</label>
+        <textarea name="linkimg" placeholder="Post linkimg"
+                  class="form-control">{{ request.form['linkimg'] }}</textarea>
     </div>
 
     <div class="form-group">
